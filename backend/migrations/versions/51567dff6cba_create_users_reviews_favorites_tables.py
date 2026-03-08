@@ -1,9 +1,8 @@
-"""create users reviews favorites tables
 
+"""create users reviews favorites tables
 Revision ID: 51567dff6cba
 Revises: 
 Create Date: 2026-03-08 14:29:28.555919
-
 """
 from typing import Sequence, Union
 
