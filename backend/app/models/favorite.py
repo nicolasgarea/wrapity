@@ -3,6 +3,7 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.db.database import Base
 
+
 class Favorite(Base):
     __tablename__ = "favorites"
 

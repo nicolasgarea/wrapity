@@ -11,3 +11,5 @@ dist/
 # IDE
 .vscode/
 .idea/
+
+.ruff_cache/

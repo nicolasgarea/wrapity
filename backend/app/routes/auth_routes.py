@@ -10,17 +10,23 @@ from fastapi import status
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
+
 def get_auth_service(db: Session = Depends(get_db)) -> Auth:
     repo = UserRepository(db)
     return Auth(repo)
 
 
 @router.post("/register", status_code=status.HTTP_201_CREATED, response_model=Token)
-def register(user_data: UserRegister, auth_service: Auth = Depends(get_auth_service)) -> Token:
+def register(
+    user_data: UserRegister, auth_service: Auth = Depends(get_auth_service)
+) -> Token:
     token = auth_service.register_user(user_data)
     return Token(access_token=token, token_type="bearer")
 
+
 @router.post("/login", status_code=status.HTTP_200_OK, response_model=Token)
-def login(user_data: UserLogin, auth_service: Auth = Depends(get_auth_service)) -> Token:
+def login(
+    user_data: UserLogin, auth_service: Auth = Depends(get_auth_service)
+) -> Token:
     token = auth_service.login_user(user_data)
     return Token(access_token=token, token_type="bearer")

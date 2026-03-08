@@ -4,11 +4,12 @@ from app.core.exceptions import (
     EmailAlreadyExistsException,
     UsernameAlreadyExistsException,
     InvalidCredentialsException,
-    InvalidTokenException
+    InvalidTokenException,
 )
 
+
 def register_exception_handlers(app):
-    
+
     @app.exception_handler(EmailAlreadyExistsException)
     def email_exists_handler(request: Request, exc: EmailAlreadyExistsException):
         return JSONResponse(status_code=409, content={"detail": str(exc)})
