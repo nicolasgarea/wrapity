@@ -3,6 +3,7 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.db.database import Base
 
+
 class User(Base):
     __tablename__ = "users"
 
@@ -16,4 +17,3 @@ class User(Base):
 
     reviews = relationship("Review", back_populates="user")
     favorites = relationship("Favorite", back_populates="user")
-    

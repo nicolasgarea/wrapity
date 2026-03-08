@@ -22,6 +22,7 @@ PyMySQL==1.1.2
 python-dotenv==1.2.2
 python-jose==3.5.0
 rsa==4.9.1
+ruff==0.15.5
 six==1.17.0
 SQLAlchemy==2.0.48
 starlette==0.52.1
