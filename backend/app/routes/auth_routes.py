@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.db.database import get_db
-from app.repositories.user_repository import UserRepository
+from app.repositories.user_repositories import UserRepository
 from app.schemas.user_schemas import UserLogin, UserRegister
 from app.services.auth_services import Auth
 from app.schemas.token_schemas import Token

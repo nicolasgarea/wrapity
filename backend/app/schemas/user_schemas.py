@@ -19,3 +19,9 @@ class UserResponse(BaseModel):
     email: str
     bio: str | None = None
     avatar_url: str | None = None
+
+
+class UserUpdate(BaseModel):
+    username: str | None = None
+    bio: str | None = None
+    avatar_url: str | None = None
